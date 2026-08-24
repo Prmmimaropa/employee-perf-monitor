@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Performance Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Employee Performance Monitoring System</h1>
+            <p>MFO-Based Performance Evaluation with Quality, Efficiency & Timeliness Metrics</p>
+        </header>
+
+        <main>
+            <!-- Add New Performance Record Section -->
+            <section class="form-section">
+                <h2>Add New Performance Record</h2>
+                <form id="performanceForm">
+                    <div class="form-group">
+                        <label for="employeeName">Employee Name:</label>
+                        <input type="text" id="employeeName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="evaluationPeriod">Evaluation Period:</label>
+                        <input type="month" id="evaluationPeriod" required>
+                    </div>
+
+                    <!-- MFO Section -->
+                    <div class="form-section-sub">
+                        <h3>Major Final Output (MFO) / Work Activity</h3>
+                        <div class="form-group">
+                            <label for="mfoName">MFO Name:</label>
+                            <input type="text" id="mfoName" placeholder="e.g., Client Report Completion" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="outputRequired">Output Required:</label>
+                            <input type="text" id="outputRequired" placeholder="e.g., Comprehensive quarterly report" required>
+                        </div>
+                    </div>
+
+                    <!-- Performance Dimensions -->
+                    <div class="form-section-sub">
+                        <h3>Performance Dimensions</h3>
+                        
+                        <!-- Quality -->
+                        <div class="dimension-group">
+                            <label>Quality (Weight: 40%)</label>
+                            <div class="rating-scale">
+                                <div class="scale-item">
+                                    <input type="radio" name="quality" value="5" required>
+                                    <label>5 - Outstanding</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="quality" value="4">
+                                    <label>4 - Good</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="quality" value="3">
+                                    <label>3 - Satisfactory</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="quality" value="2">
+                                    <label>2 - Below Average</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="quality" value="1">
+                                    <label>1 - Poor</label>
+                                </div>
+                            </div>
+                            <textarea placeholder="Quality comments..." id="qualityComments" class="comments"></textarea>
+                        </div>
+
+                        <!-- Efficiency -->
+                        <div class="dimension-group">
+                            <label>Efficiency (Weight: 35%)</label>
+                            <div class="rating-scale">
+                                <div class="scale-item">
+                                    <input type="radio" name="efficiency" value="5" required>
+                                    <label>5 - Outstanding</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="efficiency" value="4">
+                                    <label>4 - Good</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="efficiency" value="3">
+                                    <label>3 - Satisfactory</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="efficiency" value="2">
+                                    <label>2 - Below Average</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="efficiency" value="1">
+                                    <label>1 - Poor</label>
+                                </div>
+                            </div>
+                            <textarea placeholder="Efficiency comments..." id="efficiencyComments" class="comments"></textarea>
+                        </div>
+
+                        <!-- Timeliness -->
+                        <div class="dimension-group">
+                            <label>Timeliness (Weight: 25%)</label>
+                            <div class="rating-scale">
+                                <div class="scale-item">
+                                    <input type="radio" name="timeliness" value="5" required>
+                                    <label>5 - Outstanding</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="timeliness" value="4">
+                                    <label>4 - Good</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="timeliness" value="3">
+                                    <label>3 - Satisfactory</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="timeliness" value="2">
+                                    <label>2 - Below Average</label>
+                                </div>
+                                <div class="scale-item">
+                                    <input type="radio" name="timeliness" value="1">
+                                    <label>1 - Poor</label>
+                                </div>
+                            </div>
+                            <textarea placeholder="Timeliness comments..." id="timelinessComments" class="comments"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="overallComments">Overall Comments:</label>
+                        <textarea id="overallComments" placeholder="Additional observations and feedback..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Performance Record</button>
+                </form>
+            </section>
+
+            <!-- Performance Records Display -->
+            <section class="records-section">
+                <h2>Performance Records</h2>
+                <div id="recordsContainer" class="records-container"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
